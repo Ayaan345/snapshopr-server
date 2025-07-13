@@ -23,7 +23,11 @@ const upload = multer({ storage });
 const app = express();
 
 const corsOptions = {
-  origin: ["https://snapshopr-client.vercel.app", "http://localhost:3000"], // your Next.js dev server
+  origin: [
+    "https://snapshopr-client.vercel.app",
+    "http://localhost:3000",
+    "https://snapshopr-client-8nmveo06u-ayaans-projects-aa2a329d.vercel.app" // <-- Add this!
+  ],
   credentials: true, // if you plan to send cookies/auth headers
 };
 
