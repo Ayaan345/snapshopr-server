@@ -13,6 +13,8 @@ const chatRoutes = require("./routes/chatRoutes");
 const { notFound, errorHandler } = require("./middleware/errorHandler");
 const Item = require("./models/item");
 
+
+
 const app = express();
 
 const corsOptions = {
@@ -67,5 +69,8 @@ app.use(errorHandler);
 app.get('/health', (req, res) => {
   res.status(200).json({ message: "✅ Server is running!" });
 });
+
+app.use(notFound);
+app.use(errorHandler);
 
 module.exports = app;
